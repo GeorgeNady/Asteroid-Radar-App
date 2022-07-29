@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--Margin-->
     <dimen name="default_m">16dp</dimen>
     <dimen name="small_m">8dp</dimen>
 
+    <!--Padding-->
     <dimen name="default_p">16dp</dimen>
     <dimen name="small_p">8dp</dimen>
 
+    <!--radius-->
     <dimen name="default_radius">16dp</dimen>
     <dimen name="small_radius">8dp</dimen>
+
+    <!--textSize-->
+    <dimen name="title">32sp</dimen>
+    <dimen name="sub_title">20sp</dimen>
+    <dimen name="head">22sp</dimen>
+    <dimen name="normal">18sp</dimen>
+
 </resources>

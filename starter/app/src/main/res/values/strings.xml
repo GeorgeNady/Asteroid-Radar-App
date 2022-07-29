@@ -23,4 +23,8 @@
     <string name="place_holder_image_for_asteroid">place holder image for Asteroid</string>
     <string name="asteroid_name_placeholder">Asteroid Name</string>
     <string name="asteroid_date_placeholder">Close Approach Data</string>
+    <string name="asteroid_image_of_the_day">asteroid\'s image of the day</string>
+    <string name="image_of_the_day_s_title">image of the day\'s title</string>
+    <string name="list_of_astoriods">list of astoriods</string>
+    <string name="circle_progress_for_handling_loading_state">circle progress for handling loading state</string>
 </resources>

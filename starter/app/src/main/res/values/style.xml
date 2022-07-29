@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="HeadTextView">
+        <item name="android:textAppearance">@style/Head</item>
+        <item name="android:textColor">@color/md_theme_onPrimaryContainer</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">@dimen/default_p</item>
+    </style>
+    <style name="Head" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/head</item>
+    </style>
+</resources>
