@@ -32,32 +32,20 @@ class MainViewModel(private val app: Application) : AndroidViewModel(app) {
     val asteroidsLoadingRequestState: LiveData<RequestState> get() = _asteroidsLoadingRequestState
 
     init {
-        george@ fun george(msg:String) {
-            Timber.d(msg)
-        }
-
         refreshImageOfDay()
-        george@"refreshImageOfDay()"
         refreshAsteroids()
-        george@"refreshAsteroids()"
     }
 
     private fun refreshImageOfDay() = viewModelScope.launch {
         _imageLoadingRequestState.value = RequestState.LOADING
-        george@"refreshImageOfDay -> LOADING"
         val result = repo.refreshImageOfDay()
-        george@"repo.refreshImageOfDay()"
         _imageLoadingRequestState.value =  result
-        george@"refreshImageOfDay -> DONE || FAILED"
     }
 
     private fun refreshAsteroids() = viewModelScope.launch {
         _asteroidsLoadingRequestState.value = RequestState.LOADING
-        george@"refreshAsteroids -> LOADING"
         val result = repo.refreshAsteroids()
-        george@"repo.refreshAsteroids()"
         _asteroidsLoadingRequestState.value = result
-        george@"refreshAsteroids -> DONE || FAILED"
     }
 
 }
