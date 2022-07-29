@@ -11,10 +11,13 @@ import com.udacity.asteroidradar.domain.Asteroid
 @Dao
 interface AsteroidDao {
 
-    @Query("SELECT * FROM asteroid_table")
+    @Query("SELECT * FROM asteroid_table ORDER by closeApproachDate ASC")
     fun getAllAsteroids() : LiveData<List<AsteroidTable>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAsteroids(vararg asteroids: AsteroidTable)
+
+    @Query("DELETE FROM asteroid_table")
+    fun deleteAllAsteroids()
 
 }

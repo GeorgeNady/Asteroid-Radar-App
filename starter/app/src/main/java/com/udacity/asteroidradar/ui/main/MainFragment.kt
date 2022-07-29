@@ -10,6 +10,7 @@ import com.udacity.asteroidradar.R
 import com.udacity.asteroidradar.databinding.FragmentMainBinding
 import com.udacity.asteroidradar.ui.main.adapter.AsteroidClickListener
 import com.udacity.asteroidradar.ui.main.adapter.AsteroidsRecyclerViewAdapter
+import com.udacity.asteroidradar.utile.RequestState
 
 
 class MainFragment : Fragment() {
@@ -33,10 +34,24 @@ class MainFragment : Fragment() {
             bViewModel = viewModel
             bAdapter = adapter
 
-            viewModel.asteroids.observe(viewLifecycleOwner) {
-                Log.d(this::class.simpleName, "onCreateView: $it")
-                adapter.submitList(it)
+            with(viewModel) {
+                asteroids.observe(viewLifecycleOwner) {
+                    Log.d(this::class.simpleName, "onCreateView: $it")
+                    adapter.submitList(it)
+                }
+
+                imageLoadingRequestState.observe(viewLifecycleOwner) {
+
+                }
+
+                asteroidsLoadingRequestState.observe(viewLifecycleOwner) {
+                    when(it) {
+                        RequestState.LOADING -> progress.visible()
+                        else -> progress.hide()
+                    }
+                }
             }
+
         }
 
         return binding.root
@@ -50,4 +65,13 @@ class MainFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return true
     }
+
+    private fun View.hide() {
+        visibility = View.GONE
+    }
+
+    private fun View.visible() {
+        visibility = View.VISIBLE
+    }
+
 }

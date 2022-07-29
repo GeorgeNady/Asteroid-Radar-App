@@ -18,7 +18,7 @@ fun ImageView.bindAsteroidStatusImage(isHazardous: Boolean) {
 @BindingAdapter("setImageWithUrl")
 fun ImageView.setImageOfTheDay(url: String?) {
     Picasso.get().load(url).fit().centerCrop()
-        .placeholder(R.drawable.placeholder_picture_of_day)
+        .placeholder(R.drawable.loading_animation)
         .error(R.drawable.ic_baseline_error_24)
         .into(this)
 }

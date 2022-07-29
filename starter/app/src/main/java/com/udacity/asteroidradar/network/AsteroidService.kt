@@ -1,9 +1,11 @@
 package com.udacity.asteroidradar.network
 
 import com.udacity.asteroidradar.network.model.ImageOfDayResponse
+import com.udacity.asteroidradar.utile.Constants
 import com.udacity.asteroidradar.utile.Constants.API_KEY
 import com.udacity.asteroidradar.utile.Constants.END_DATE
 import com.udacity.asteroidradar.utile.Constants.START_DATE
+import com.udacity.asteroidradar.utile.Constants.apiKey
 import kotlinx.coroutines.Deferred
 import okhttp3.ResponseBody
 import retrofit2.http.GET
@@ -27,14 +29,14 @@ interface AsteroidService {
     fun getNeoFeedAsync(
         @Query(START_DATE) startDate: String, // Date Format -> YYYY-MM-DD
         @Query(END_DATE) endDate: String, // Date Format -> YYYY-MM-DD
-        @Query(API_KEY) apiKey: String
+        @Query(API_KEY) apiKey: String = Constants.apiKey
     ): Deferred<String>
 
 
     /** # NASA image of the day */
     @GET("planetary/apod")
-    suspend fun nasaImageOfTheDay(
-        @Query(API_KEY) apiKey: String
+    suspend fun getImageOfTheDay(
+        @Query(API_KEY) apiKey: String = Constants.apiKey
     ): ImageOfDayResponse
 
 }

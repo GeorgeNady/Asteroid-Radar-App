@@ -3,6 +3,7 @@ package com.udacity.asteroidradar.db.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.udacity.asteroidradar.domain.Asteroid
+import java.time.OffsetDateTime
 
 @Entity(
     tableName = "asteroid_table"
