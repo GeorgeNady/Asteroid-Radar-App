@@ -14,7 +14,8 @@ import com.udacity.asteroidradar.utile.Constants.DATABASE_NAME
         AsteroidTable::class,
         ImageOfDayTable::class
     ],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class AsteroidDatabase : RoomDatabase() {
     abstract val asteroidDao: AsteroidDao

@@ -35,9 +35,23 @@ class AsteroidRepository(
             }
         }
 
+    val todayAsteroids: LiveData<List<Asteroid>> =
+        Transformations.map(database.asteroidDao.getTodayAsteroids(dateFormat.format(calendar.time))) {
+            it?.let { list ->
+                list.map { asteroidTable ->  asteroidTable.asDomainModel() }
+            }
+        }
+
+    val weekAsteroids: LiveData<List<Asteroid>> =
+        Transformations.map(database.asteroidDao.getWeekAsteroids(dateFormat.format(calendar.time))) {
+            it?.let { list ->
+                list.map { asteroidTable ->  asteroidTable.asDomainModel() }
+            }
+        }
+
     val imageOfDay: LiveData<ImageOfDay> =
         Transformations.map((database.imageDayDao.getAllImages())) {
-            it?.map { img -> img.asDomainModel() }?.first()
+            it?.asDomainModel()
         }
 
 

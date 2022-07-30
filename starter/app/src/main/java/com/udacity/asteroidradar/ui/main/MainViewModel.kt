@@ -29,6 +29,8 @@ class MainViewModel(private val app: Application) : AndroidViewModel(app) {
     val imageOfTheDay: LiveData<ImageOfDay> get() = repo.imageOfDay
     val imageLoadingRequestState: LiveData<RequestState> get() = _imageLoadingRequestState
     val asteroids: LiveData<List<Asteroid>> get() = repo.asteroids
+    val todayAsteroids: LiveData<List<Asteroid>> get() = repo.todayAsteroids
+    val weekAsteroids: LiveData<List<Asteroid>> get() = repo.weekAsteroids
     val asteroidsLoadingRequestState: LiveData<RequestState> get() = _asteroidsLoadingRequestState
 
     init {

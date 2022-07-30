@@ -11,8 +11,8 @@ import com.udacity.asteroidradar.db.entities.ImageOfDayTable
 @Dao
 interface ImageDayDao {
 
-    @Query("SELECT * FROM image_day_table")
-    fun getAllImages() : LiveData<List<ImageOfDayTable>>
+    @Query("SELECT * FROM image_day_table ORDER BY date DESC LIMIT 1")
+    fun getAllImages() : LiveData<ImageOfDayTable>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertImages(vararg images: ImageOfDayTable)
