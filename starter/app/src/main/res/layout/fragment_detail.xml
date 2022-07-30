@@ -19,12 +19,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:contentDescription="@{@string/place_holder_image_for_asteroid(bAsteroid.codename)}"
             app:asteroidStatusImage="@{bAsteroid.potentiallyHazardous}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/asteroid_safe"
-            android:contentDescription="@string/place_holder_image_for_asteroid" />
+            tools:srcCompat="@drawable/asteroid_safe" />
 
         <ScrollView
             android:layout_width="0dp"
@@ -47,16 +47,16 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/close_approach_data_title"
-                         />
+                        android:contentDescription="@string/close_approach_data_title_label"
+                        android:text="@string/close_approach_data_title" />
 
                     <TextView
                         android:id="@+id/close_approach_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
+                        android:contentDescription="@{@string/close_approach_data_title_label(bAsteroid.closeApproachDate)}"
                         android:text="@{bAsteroid.closeApproachDate}"
-
                         tools:text="2020-02-01" />
                 </LinearLayout>
 
@@ -76,15 +76,15 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/absolute_magnitude_title"
-                             />
+                            android:contentDescription="@string/absolute_magnitude_title_label"
+                            android:text="@string/absolute_magnitude_title" />
 
                         <TextView
                             android:id="@+id/absolute_magnitude"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-
+                            android:contentDescription="@{@string/absolute_magnitude_title_format(bAsteroid.absoluteMagnitude)}"
                             app:astronomicalUnitText="@{bAsteroid.absoluteMagnitude}"
                             tools:text="25.126 au" />
                     </LinearLayout>
@@ -93,9 +93,9 @@
                         android:id="@+id/help_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:contentDescription="@string/help_button_with_question_mark_icon"
                         android:padding="16dp"
-                        app:srcCompat="@drawable/ic_help_circle"
-                        android:contentDescription="@string/help_button_with_question_mark_icon" />
+                        app:srcCompat="@drawable/ic_help_circle" />
 
                 </LinearLayout>
 
@@ -103,15 +103,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="@string/estimated_diameter_title"
-                     />
+                    android:contentDescription="@string/estimated_diameter_title_label"
+                    android:text="@string/estimated_diameter_title" />
 
                 <TextView
                     android:id="@+id/estimated_diameter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-
+                    android:contentDescription="@{@string/estimated_diameter_title_format(bAsteroid.estimatedDiameter)}"
                     app:kmUnitText="@{bAsteroid.estimatedDiameter}"
                     tools:text="0.82 km" />
 
@@ -119,15 +119,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="@string/relative_velocity_title"
-                     />
+                    android:contentDescription="@string/relative_velocity_title_label"
+                    android:text="@string/relative_velocity_title" />
 
                 <TextView
                     android:id="@+id/relative_velocity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-
+                    android:contentDescription="@{@string/relative_velocity_title_format(bAsteroid.relativeVelocity)}"
                     app:velocityText="@{bAsteroid.relativeVelocity}"
                     tools:text="11.9 km/s" />
 
@@ -135,15 +135,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="@string/distance_from_earth_title"
-                     />
+                    android:contentDescription="@string/distance_from_earth_title_label"
+                    android:text="@string/distance_from_earth_title" />
 
                 <TextView
                     android:id="@+id/distance_from_earth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-
+                    android:contentDescription="@{@string/distance_from_earth_title_format(bAsteroid.distanceFromEarth)}"
                     app:astronomicalUnitText="@{bAsteroid.distanceFromEarth}"
                     tools:text="0.0924 au" />
 
