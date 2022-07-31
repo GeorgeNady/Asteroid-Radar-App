@@ -53,14 +53,6 @@ class MainFragment : Fragment() {
                     }
                 }
 
-                asteroids.observe(viewLifecycleOwner) {
-                    adapter.submitList(it)
-                }
-
-                imageLoadingRequestState.observe(viewLifecycleOwner) {
-
-                }
-
                 asteroidsLoadingRequestState.observe(viewLifecycleOwner) {
                     when(it) {
                         RequestState.LOADING -> progress.visible()
